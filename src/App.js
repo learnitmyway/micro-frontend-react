@@ -38,7 +38,9 @@ function App({ containerId }) {
         contentLabel="Example Modal"
       >
         <h2 ref={(_subtitle) => (subtitle = _subtitle)}>Hello</h2>
-        <button onClick={closeModal}>close</button>
+        <button className="Modal__button" onClick={closeModal}>
+          close
+        </button>
         <div>I am a modal</div>
         <form>
           <input />
