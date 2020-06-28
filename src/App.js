@@ -1,4 +1,5 @@
 import React from 'react'
+import ReactDOM from 'react-dom'
 import logo from './logo.svg'
 import './App.css'
 import Modal from 'react-modal'
@@ -17,7 +18,6 @@ const customStyles = {
 function App({ containerId }) {
   Modal.setAppElement('#' + containerId)
   var subtitle
-  const [modalIsOpen, setIsOpen] = React.useState(true)
 
   function afterOpenModal() {
     // references are now sync'd and can be accessed.
@@ -25,13 +25,13 @@ function App({ containerId }) {
   }
 
   function closeModal() {
-    setIsOpen(false)
+    ReactDOM.unmountComponentAtNode(document.getElementById(containerId))
   }
 
   return (
     <div>
       <Modal
-        isOpen={modalIsOpen}
+        isOpen={true}
         onAfterOpen={afterOpenModal}
         onRequestClose={closeModal}
         style={customStyles}
