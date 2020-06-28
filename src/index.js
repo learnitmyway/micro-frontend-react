@@ -7,7 +7,7 @@ import * as serviceWorker from './serviceWorker'
 window.renderReactApp = (containerId) => {
   ReactDOM.render(
     <React.StrictMode>
-      <App />
+      <App containerId={containerId} />
     </React.StrictMode>,
     document.getElementById(containerId)
   )
