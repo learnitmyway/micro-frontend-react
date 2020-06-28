@@ -9,10 +9,6 @@ module.exports = {
           },
         },
       },
-      output: {
-        filename: 'static/js/main.js',
-        chunkFilename: 'static/js/[name].chunk.js',
-      },
     },
   },
 }
