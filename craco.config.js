@@ -4,14 +4,10 @@ module.exports = {
       optimization: {
         runtimeChunk: false,
         splitChunks: {
-          cacheGroups: {
-            default: false,
+          chunks(chunk) {
+            return false
           },
         },
-      },
-      output: {
-        filename: 'static/js/main.js',
-        chunkFilename: 'static/js/[name].chunk.js',
       },
     },
   },
