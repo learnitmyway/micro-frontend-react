@@ -25,6 +25,10 @@ function App({ containerId }) {
   }
 
   function closeModal() {
+    const event = new CustomEvent('react-app-status', {
+      detail: { status: 'CANCELLED' },
+    })
+    window.dispatchEvent(event)
     ReactDOM.unmountComponentAtNode(document.getElementById(containerId))
   }
 
