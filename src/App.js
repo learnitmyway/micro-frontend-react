@@ -15,7 +15,7 @@ const customStyles = {
   },
 }
 
-function App({ containerId }) {
+function App({ containerId, resolve }) {
   Modal.setAppElement('#' + containerId)
   var subtitle
 
@@ -25,10 +25,7 @@ function App({ containerId }) {
   }
 
   function closeModal() {
-    const event = new CustomEvent('react-app-status', {
-      detail: { status: 'CANCELLED' },
-    })
-    window.dispatchEvent(event)
+    resolve('CANCELLED')
     ReactDOM.unmountComponentAtNode(document.getElementById(containerId))
   }
 

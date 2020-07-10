@@ -5,12 +5,14 @@ import App from './App'
 import * as serviceWorker from './serviceWorker'
 
 window.renderReactApp = (containerId) => {
-  ReactDOM.render(
-    <React.StrictMode>
-      <App containerId={containerId} />
-    </React.StrictMode>,
-    document.getElementById(containerId)
-  )
+  return new Promise((resolve, reject) => {
+    ReactDOM.render(
+      <React.StrictMode>
+        <App containerId={containerId} resolve={resolve} />
+      </React.StrictMode>,
+      document.getElementById(containerId)
+    )
+  })
 }
 
 // If you want your app to work offline and load faster, you can change
