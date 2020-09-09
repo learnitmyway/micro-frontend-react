@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import logo from './logo.svg'
-import './App.css'
+import styles from './App.module.css'
 import Modal from 'react-modal'
 
 const customStyles = {
@@ -39,7 +39,7 @@ function App({ containerId, resolve }) {
         contentLabel="Example Modal"
       >
         <h2 ref={(_subtitle) => (subtitle = _subtitle)}>Hello</h2>
-        <button className="Modal__button" onClick={closeModal}>
+        <button className={styles.button} onClick={closeModal}>
           close
         </button>
         <div>I am a modal</div>
