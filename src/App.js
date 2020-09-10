@@ -1,6 +1,5 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import logo from './logo.svg'
 import styles from './App.module.css'
 import Modal from 'react-modal'
 
