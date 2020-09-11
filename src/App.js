@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import './App.css'
 import styles from './App.module.css'
 import Modal from 'react-modal'
 
@@ -29,7 +30,7 @@ function App({ containerId, resolve }) {
   }
 
   return (
-    <div>
+    <div className="my-prefix">
       <Modal
         isOpen={true}
         onAfterOpen={afterOpenModal}
@@ -44,7 +45,7 @@ function App({ containerId, resolve }) {
         <div>I am a modal</div>
         <form>
           <input />
-          <button>tab navigation</button>
+          <button className="tab-nav-button">tab navigation</button>
           <button>stays</button>
           <button>inside</button>
           <button>the modal</button>
