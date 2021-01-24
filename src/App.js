@@ -14,18 +14,16 @@ const customStyles = {
 };
 
 function App({ containerId, resolve }) {
-  const [isOpen, setOpen] = React.useState(true);
   Modal.setAppElement("#" + containerId);
 
   function closeModal(status) {
     resolve(status);
-    setOpen(false);
   }
 
   return (
     <div>
       <Modal
-        isOpen={isOpen}
+        isOpen={true}
         onRequestClose={closeModal}
         style={customStyles}
         contentLabel="Example Modal"
