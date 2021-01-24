@@ -16,12 +16,6 @@ const customStyles = {
 function App({ containerId, resolve }) {
   const [isOpen, setOpen] = React.useState(true);
   Modal.setAppElement("#" + containerId);
-  var subtitle;
-
-  function afterOpenModal() {
-    // references are now sync'd and can be accessed.
-    subtitle.style.color = "#f00";
-  }
 
   function closeModal(status) {
     resolve(status);
@@ -32,14 +26,11 @@ function App({ containerId, resolve }) {
     <div>
       <Modal
         isOpen={isOpen}
-        onAfterOpen={afterOpenModal}
         onRequestClose={closeModal}
         style={customStyles}
         contentLabel="Example Modal"
       >
-        <h2 ref={(_subtitle) => (subtitle = _subtitle)}>
-          Hello, I'm an external app
-        </h2>
+        <h2>Hello, I'm an external app</h2>
         <button onClick={() => closeModal("CANCEL")}>cancel</button>
         <button
           className={styles.successButton}
