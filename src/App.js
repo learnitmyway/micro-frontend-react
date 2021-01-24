@@ -23,8 +23,8 @@ function App({ containerId, resolve }) {
     subtitle.style.color = '#f00'
   }
 
-  function closeModal() {
-    resolve('CANCELLED')
+  function closeModal(status) {
+    resolve(status)
     ReactDOM.unmountComponentAtNode(document.getElementById(containerId))
   }
 
@@ -37,18 +37,13 @@ function App({ containerId, resolve }) {
         style={customStyles}
         contentLabel="Example Modal"
       >
-        <h2 ref={(_subtitle) => (subtitle = _subtitle)}>Hello</h2>
-        <button className={styles.button} onClick={closeModal}>
-          close
+        <h2 ref={(_subtitle) => (subtitle = _subtitle)}>Hello, I'm an external app</h2>
+        <button onClick={() => closeModal('CANCEL')}>
+          cancel
         </button>
-        <div>I am a modal</div>
-        <form>
-          <input />
-          <button>tab navigation</button>
-          <button>stays</button>
-          <button>inside</button>
-          <button>the modal</button>
-        </form>
+        <button className={styles.successButton} onClick={() => closeModal('SUCCESS')}>
+          success
+        </button>
       </Modal>
     </div>
   )
