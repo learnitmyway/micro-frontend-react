@@ -1,5 +1,4 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
 import styles from './App.module.css'
 import Modal from 'react-modal'
 
@@ -15,6 +14,7 @@ const customStyles = {
 }
 
 function App({ containerId, resolve }) {
+  const [isOpen, setOpen] = React.useState(true)
   Modal.setAppElement('#' + containerId)
   var subtitle
 
@@ -25,13 +25,13 @@ function App({ containerId, resolve }) {
 
   function closeModal(status) {
     resolve(status)
-    ReactDOM.unmountComponentAtNode(document.getElementById(containerId))
+    setOpen(false)
   }
 
   return (
     <div>
       <Modal
-        isOpen={true}
+        isOpen={isOpen}
         onAfterOpen={afterOpenModal}
         onRequestClose={closeModal}
         style={customStyles}
