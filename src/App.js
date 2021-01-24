@@ -13,11 +13,16 @@ const customStyles = {
   },
 };
 
+const STATUS = {
+  cancel: "cancel",
+  success: "success",
+};
+
 function App({ containerId, resolve }) {
   Modal.setAppElement("#" + containerId);
 
   function closeModal(status) {
-    resolve(status);
+    resolve(STATUS.hasOwnProperty(status) ? status : STATUS.cancel);
   }
 
   return (
