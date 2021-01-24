@@ -29,10 +29,10 @@ function App({ containerId, resolve }) {
         contentLabel="Example Modal"
       >
         <h2>Hello, I'm an external app</h2>
-        <button onClick={() => closeModal("CANCEL")}>cancel</button>
+        <button onClick={() => closeModal("cancel")}>cancel</button>
         <button
           className={styles.successButton}
-          onClick={() => closeModal("SUCCESS")}
+          onClick={() => closeModal("success")}
         >
           success
         </button>
